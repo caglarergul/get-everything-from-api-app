@@ -63,6 +63,8 @@ class GetProductList extends Component {
         });
     };
 
+   
+
     componentDidMount() {
         this.getProductsFromAPI();
     }
