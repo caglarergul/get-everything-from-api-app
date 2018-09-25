@@ -1,9 +1,20 @@
 import React, {Component} from 'react';
+import Sidebar from "../Sidebar/Sidebar";
 
-class Navigation extends Component {
+class GetSidebar extends Component {
     state = {
         categoryList: []
     };
+
+
+    removeDuplicateCategories = ( arr, prop ) => {
+        let obj = {};
+        return Object.keys(arr.reduce((prev, next) => {
+            if(!obj[next[prop]]) obj[next[prop]] = next;
+            return obj;
+        }, obj)).map((i) => obj[i]);
+    };
+
 
     getCategoriesFromAPI = () => {
         let request = new Request('https://www.promiks.com.tr/WS/WSANXMLPublish.aspx?xmlpid=6');
@@ -24,21 +35,28 @@ class Navigation extends Component {
                         let ProductCategoryName = x[i].childNodes[34].textContent; // Category Name
                         let CategoryId = x[i].childNodes[32].textContent; // Category Id
 
-                        if(newCategoryList.indexOf(newCategoryList[i].CategoryId) === -1) {
+
                             newCategoryList.push({
                                 CategoryId: CategoryId,
                                 CategoryName: ProductCategoryName
 
                             });
-                        }
+
 
 
                     }
 
-                    console.log(newCategoryList);
 
+                    let updatedCategoryList = this.removeDuplicateCategories(newCategoryList,"CategoryId");
+
+
+                    delete updatedCategoryList[38];
+                    let sortedList = updatedCategoryList.sort(function(a,b) {
+                        return a.CategoryName - b.CategoryName;
+                    });
+                     console.log(sortedList);
                     this.setState({
-                        categoryList: newCategoryList
+                        categoryList: sortedList
                     });
                 });
 
@@ -50,12 +68,18 @@ class Navigation extends Component {
         this.getCategoriesFromAPI();
     }
     render() {
+
+        const categories = Object.values(this.state.categoryList).map((data) =>
+            <Sidebar
+                key={data.CategoryId} CategoryId={data.CategoryId} CategoryName={data.CategoryName} />
+        );
         return (
             <div>
-
+                <h1>Kategoriler</h1>
+                {categories}
             </div>
         );
     }
 }
 
-export default Navigation;
+export default GetSidebar;

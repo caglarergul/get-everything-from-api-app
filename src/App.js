@@ -1,22 +1,15 @@
-import React, { Component } from 'react';
-import {Route, Switch } from 'react-router-dom';
-import GetProductList from "./pages/GetProductList";
-import GetCategories from "./pages/GetCategories";
-import Home from "./pages/Home";
+import React, {Component} from 'react';
 import Layout from "./components/UI/Layout";
+import Aux from "./components/UI/Auxilary";
 
 class App extends Component {
-  render() {
-    return (
-        <Layout>
-        <Switch>
-            <Route path="/products/:id" component={GetProductList}/>
-            <Route path="/categories" component={GetCategories}/>
-            <Route path="/" exact component={Home}/>
-        </Switch>
-        </Layout>
-    );
-  }
+    render() {
+        return (
+            <Aux>
+                <Layout/>
+            </Aux>
+        );
+    }
 }
 
 export default App;

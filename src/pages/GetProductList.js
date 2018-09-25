@@ -6,9 +6,12 @@ class GetProductList extends Component {
         productList: [],
         categoryId: this.props.match.params.id,
         categoryName: null
+
     };
 
-    getProductsFromAPI = () => {
+
+
+    getProductsFromAPI = (propsCatId) => {
         let request = new Request('https://www.promiks.com.tr/WS/WSANXMLPublish.aspx?xmlpid=6');
 
         fetch(request).then((results) => {
@@ -23,7 +26,8 @@ class GetProductList extends Component {
                     let newProductList = [];
 
                     for (let i = 0; i < x.length; i++) {
-                        if (x[i].childNodes[32].textContent == this.state.categoryId) {
+                         // eslint-disable-next-line to
+                        if (x[i].childNodes[32].textContent === propsCatId) {
                             let ModelNameValue = x[i].childNodes[6].textContent; // Model Name
                             let ProductIdValue = x[i].childNodes[1].textContent; // Model Name
                             let ProductImageValue = x[i].childNodes[30].textContent; // Model Name
@@ -44,16 +48,8 @@ class GetProductList extends Component {
 
                     }
 
-                    console.log(newProductList);
+                    // console.log(newProductList);
 
-                    /* for (let i = 0; i < 10; i++) {
-                         console.log(x[i].childNodes[6]);
-
-                         this.setState({content: x[i].childNodes[6]});
-
-
-                         //console.log(x[i].nodeName + ": " + x[i].childNodes[0].nodeValue + "<br>");
-                     }*/
 
                     this.setState({
                         productList: newProductList
@@ -63,10 +59,14 @@ class GetProductList extends Component {
         });
     };
 
-   
+
 
     componentDidMount() {
-        this.getProductsFromAPI();
+        this.getProductsFromAPI(this.props.match.params.id);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.getProductsFromAPI(nextProps.match.params.id);
     }
     render() {
 
@@ -84,7 +84,8 @@ class GetProductList extends Component {
 
             <div className="row">
 
-                {products}
+                    {products}
+
 
             </div>
 
