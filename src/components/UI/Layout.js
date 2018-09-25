@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Aux from './Auxilary';
-import GetSidebar from './GetSidebar';
+import GetSidebar from '../../pages/GetSidebar';
 import {Route, BrowserRouter} from "react-router-dom";
 import GetProductList from "../../pages/GetProductList";
-import GetCategories from "../../pages/GetCategories";
 import Home from "../../pages/Home";
 import Header from "../../pages/Header";
+import GetProductDetails from "../../pages/GetProductDetails";
 
 class Layout extends Component {
     render() {
@@ -19,10 +19,8 @@ class Layout extends Component {
                         <GetSidebar/>
                     </aside>
                     <main className="col-md-10 col-lg-10">
-
-                            <Route path="/products/:id" exact component={GetProductList}/>
-
-                        <Route path="/categories" exact component={GetCategories}/>
+                        <Route path="/category/:id" exact component={GetProductList}/>
+                        <Route path="/product/:id" exact component={GetProductDetails}/>
                         <Route path="/" exact component={Home}/>
                     </main>
                 </Aux>

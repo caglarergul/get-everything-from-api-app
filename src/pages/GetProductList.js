@@ -10,7 +10,6 @@ class GetProductList extends Component {
     };
 
 
-
     getProductsFromAPI = (propsCatId) => {
         let request = new Request('https://www.promiks.com.tr/WS/WSANXMLPublish.aspx?xmlpid=6');
 
@@ -26,20 +25,20 @@ class GetProductList extends Component {
                     let newProductList = [];
 
                     for (let i = 0; i < x.length; i++) {
-                         // eslint-disable-next-line to
+                        // eslint-disable-next-line to
                         if (x[i].childNodes[32].textContent === propsCatId) {
                             let ModelNameValue = x[i].childNodes[6].textContent; // Model Name
                             let ProductIdValue = x[i].childNodes[1].textContent; // Model Name
                             let ProductImageValue = x[i].childNodes[30].textContent; // Model Name
                             let ProductListPrice = x[i].childNodes[18].textContent; // Price
                             let UnitInStock = x[i].childNodes[13].textContent; // Price
-                            let ProductCategoryName =  x[i].childNodes[34].textContent; // Category Name
+                            let ProductCategoryName = x[i].childNodes[34].textContent; // Category Name
                             newProductList.push({
-                                ModelName : ModelNameValue,
-                                ProductId : ProductIdValue,
-                                ProductImage : ProductImageValue,
-                                ProductListPrice : ProductListPrice,
-                                UnitInStock : UnitInStock,
+                                ModelName: ModelNameValue,
+                                ProductId: ProductIdValue,
+                                ProductImage: ProductImageValue,
+                                ProductListPrice: ProductListPrice,
+                                UnitInStock: UnitInStock,
                                 ProductCategoryName: ProductCategoryName
 
                             });
@@ -60,7 +59,6 @@ class GetProductList extends Component {
     };
 
 
-
     componentDidMount() {
         this.getProductsFromAPI(this.props.match.params.id);
     }
@@ -68,6 +66,7 @@ class GetProductList extends Component {
     componentWillReceiveProps(nextProps) {
         this.getProductsFromAPI(nextProps.match.params.id);
     }
+
     render() {
 
         const products = Object.values(this.state.productList).map((data) =>
@@ -81,13 +80,12 @@ class GetProductList extends Component {
                 <h1>{this.state.categoryName}</h1>
 
 
-
-            <div className="row">
+                <div className="row">
 
                     {products}
 
 
-            </div>
+                </div>
 
 
             </div>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 class GetSidebar extends Component {
     state = {
@@ -15,6 +15,16 @@ class GetSidebar extends Component {
         }, obj)).map((i) => obj[i]);
     };
 
+    GetSortOrder = (prop) => {
+        return function(a, b) {
+            if (a[prop] > b[prop]) {
+                return 1;
+            } else if (a[prop] < b[prop]) {
+                return -1;
+            }
+            return 0;
+        }
+    };
 
     getCategoriesFromAPI = () => {
         let request = new Request('https://www.promiks.com.tr/WS/WSANXMLPublish.aspx?xmlpid=6');
@@ -51,10 +61,8 @@ class GetSidebar extends Component {
 
 
                     delete updatedCategoryList[38];
-                    let sortedList = updatedCategoryList.sort(function(a,b) {
-                        return a.CategoryName - b.CategoryName;
-                    });
-                     console.log(sortedList);
+                    let sortedList = updatedCategoryList.sort(this.GetSortOrder("CategoryName"));
+                    // console.log(sortedList);
                     this.setState({
                         categoryList: sortedList
                     });
