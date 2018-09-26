@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import Products from "../components/Products/Products";
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import Pace from 'react-pace-progress'
 
 class GetProductList extends Component {
     state = {
         productList: [],
         categoryId: this.props.match.params.id,
-        categoryName: null
-
+        categoryName: null,
+        isLoading: true
     };
 
 
@@ -43,6 +45,7 @@ class GetProductList extends Component {
 
                             });
                             this.setState({categoryName: ProductCategoryName});
+
                         }
 
                     }
@@ -51,7 +54,8 @@ class GetProductList extends Component {
 
 
                     this.setState({
-                        productList: newProductList
+                        productList: newProductList,
+                        isLoading: false
                     });
                 });
 
@@ -59,11 +63,15 @@ class GetProductList extends Component {
     };
 
 
+
     componentDidMount() {
         this.getProductsFromAPI(this.props.match.params.id);
     }
 
     componentWillReceiveProps(nextProps) {
+        this.setState({
+            isLoading: true
+        });
         this.getProductsFromAPI(nextProps.match.params.id);
     }
 
@@ -75,23 +83,26 @@ class GetProductList extends Component {
                 ProductImage={data.ProductImage} ProductListPrice={data.ProductListPrice}
                 UnitInStock={data.UnitInStock} ProductCategoryName={data.ProductCategoryName}/>
         );
-        return (
-            <div>
-                <h1>{this.state.categoryName}</h1>
 
+        const { isLoading } = this.state;
+        if (isLoading) {
+            return <Pace color="#27ae60"/>
+        } else {
 
-                <div className="row">
-
-                    {products}
-
-
+            return (
+                <div>
+                    <h1>{this.state.categoryName}</h1>
+                    <div className="row">
+                        <LazyLoadComponent>
+                            {products}
+                        </LazyLoadComponent>
+                    </div>
                 </div>
+            );
+
+        }
 
 
-            </div>
-
-        )
-            ;
     }
 }
 
