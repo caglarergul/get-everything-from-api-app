@@ -4,10 +4,12 @@ import Aux from '../UI/Auxilary';
 
 const sidebarPartial = (props) => (
     <Aux>
+        <li className="menu-item">
+            <NavLink to={"/category/" + props.CategoryId}  exact activclassname="active">
+                {props.CategoryName}
+            </NavLink>
+        </li>
 
-        <NavLink to={"/category/" + props.CategoryId} className="list-group-item" exact activclassname="active">
-            {props.CategoryName}
-        </NavLink>
     </Aux>
 
 );

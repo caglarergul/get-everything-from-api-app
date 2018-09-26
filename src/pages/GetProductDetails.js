@@ -29,14 +29,16 @@ class GetProductDetails extends Component {
                             let ModelNameValue = x[i].childNodes[6].textContent; // Model Name
                             let ProductIdValue = x[i].childNodes[1].textContent; // Product ID
                             let ProductImageValue = x[i].childNodes[30].textContent; // Model Name
-                            let ProductListPrice = x[i].childNodes[18].textContent; // Price
-                            let UnitInStock = x[i].childNodes[13].textContent; // Price
+                            let ProductPrice = x[i].childNodes[18].textContent; // Price
+                            let ProductKDVPrice = x[i].childNodes[17].textContent; // KDVPrice
+                            let UnitInStock = x[i].childNodes[13].textContent; // Stock
                             let ProductCategoryName =  x[i].childNodes[34].textContent; // Category Name
                             newProductDetails.push({
                                 ModelName : ModelNameValue,
                                 ProductId : ProductIdValue,
                                 ProductImage : ProductImageValue,
-                                ProductListPrice : ProductListPrice,
+                                ProductPrice : ProductPrice,
+                                ProductKDVPrice : ProductKDVPrice,
                                 UnitInStock : UnitInStock,
                                 ProductCategoryName: ProductCategoryName
 
@@ -66,7 +68,7 @@ class GetProductDetails extends Component {
         const productDetails = Object.values(this.state.productDetails).map((data) =>
             <ProductDetails
                 key={data.ProductId} ModelName={data.ModelName} ProductId={data.ProductId}
-                ProductImage={data.ProductImage} ProductListPrice={data.ProductListPrice}
+                ProductImage={data.ProductImage} ProductKDVPrice={data.ProductKDVPrice} ProductPrice={data.ProductPrice}
                 UnitInStock={data.UnitInStock} ProductCategoryName={data.ProductCategoryName}/>
         );
         return (

@@ -12,17 +12,27 @@ class Layout extends Component {
         return (
             <BrowserRouter>
                 <Aux>
-                    <header className="container">
-                        <Header/>
-                    </header>
-                    <aside className="col-md-2 col-lg-2">
-                        <GetSidebar/>
-                    </aside>
-                    <main className="col-md-10 col-lg-10">
-                        <Route path="/category/:id" exact component={GetProductList}/>
-                        <Route path="/product/:id" exact component={GetProductDetails}/>
-                        <Route path="/" exact component={Home}/>
-                    </main>
+
+                    <Header/>
+
+                    <div className="body-content outer-top-vs" id="top-banner-and-menu">
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-xs-12 col-sm-12 col-md-2 sidebar">
+
+
+                                    <GetSidebar/>
+                                </div>
+                                <div className="col-xs-12 col-sm-12 col-md-10">
+                                    <Route path="/category/:id" exact component={GetProductList}/>
+                                    <Route path="/product/:id" exact component={GetProductDetails}/>
+                                    <Route path="/" exact component={Home}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </Aux>
             </BrowserRouter>
         );

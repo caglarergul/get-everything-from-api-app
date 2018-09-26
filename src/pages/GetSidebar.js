@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Sidebar from "../components/Sidebar/Sidebar";
-
+import Aux from "../components/UI/Auxilary";
 class GetSidebar extends Component {
     state = {
         categoryList: []
@@ -82,10 +82,20 @@ class GetSidebar extends Component {
                 key={data.CategoryId} CategoryId={data.CategoryId} CategoryName={data.CategoryName} />
         );
         return (
-            <div>
-                <h1>Kategoriler</h1>
-                {categories}
-            </div>
+            <Aux>
+                <div className="side-menu animate-dropdown outer-bottom-xs">
+                    <div className="head"><i className="icon fa fa-align-justify fa-fw">&nbsp;</i> Kategoriler
+                    </div>
+                    <nav className="yamm megamenu-horizontal">
+                        <ul className="nav">
+                            {categories}
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+            </Aux>
         );
     }
 }
