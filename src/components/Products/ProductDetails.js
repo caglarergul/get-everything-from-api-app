@@ -16,17 +16,10 @@ const productsPartial = (props) => (
 
                         <div id="owl-single-product">
                             <div className="single-product-gallery-item" id="slide1">
-
-
                                     <Image source={props.ProductImage} className="img-responsive" width="100%" />
-
                             </div>
-
-
-
                         </div>
                         {/* /.single-product-slider */}
-
 
                         <div className="single-product-gallery-thumbs gallery-thumbs">
 
@@ -170,19 +163,5 @@ const productsPartial = (props) => (
             </div>
             {/* /.row */}
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-
 );
 export default productsPartial;
