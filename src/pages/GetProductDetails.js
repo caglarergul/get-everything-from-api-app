@@ -61,6 +61,7 @@ class GetProductDetails extends Component {
 
     componentDidMount() {
         this.getTheProductFromAPI(this.state.productId);
+        window.scrollTo(0, 0);
     }
 
 
@@ -73,7 +74,7 @@ class GetProductDetails extends Component {
         );
         return (
             <div>
-                <h1>Ürün Adı</h1>
+
 
                 {productDetails}
             </div>

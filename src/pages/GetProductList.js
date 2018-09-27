@@ -66,9 +66,11 @@ class GetProductList extends Component {
 
     componentDidMount() {
         this.getProductsFromAPI(this.props.match.params.id);
+        window.scrollTo(0, 0);
     }
 
     componentWillReceiveProps(nextProps) {
+        window.scrollTo(0, 0);
         this.setState({
             isLoading: true
         });
@@ -91,12 +93,20 @@ class GetProductList extends Component {
 
             return (
                 <div>
-                    <h1>{this.state.categoryName}</h1>
-                    <div className="row">
-                        <LazyLoadComponent>
-                            {products}
-                        </LazyLoadComponent>
+                    <div className="page-title"><h2>{this.state.categoryName}</h2></div>
+
+                    <div id="my-tab-content" className="tab-content category-list">
+                        <div className="tab-pane active " id="grid-container">
+                            <div className="row">
+                                <LazyLoadComponent>
+                                    {products}
+                                </LazyLoadComponent>
+                            </div>
+
+                        </div>
                     </div>
+
+
                 </div>
             );
 

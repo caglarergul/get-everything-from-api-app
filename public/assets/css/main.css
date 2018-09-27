@@ -84,7 +84,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   background-color: #fff;
 }
 
@@ -2833,13 +2833,14 @@ age-container #owl-main .owl-next {
 
 .tab-content {
     border: 1px solid #e5e5e5;
-    border-top: none;
-    }
+}
 
 .product {
   position: relative;
+  margin-bottom: 10px;
+  border-right: 1px solid #efefef;
 }
-.product .product-image img {width:100%}
+.product .product-image img {margin: 0 auto; display: block;}
 
 .product .product-image .tag {
   position: absolute;

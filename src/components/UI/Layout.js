@@ -17,10 +17,8 @@ class Layout extends Component {
 
                     <div className="body-content outer-top-vs" id="top-banner-and-menu">
                         <div className="container-fluid">
-                            <div className="row">
+                            <div className="row single-product">
                                 <div className="col-xs-12 col-sm-12 col-md-2 sidebar">
-
-
                                     <GetSidebar/>
                                 </div>
                                 <div className="col-xs-12 col-sm-12 col-md-10">
