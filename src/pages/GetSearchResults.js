@@ -4,16 +4,17 @@ import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import Pace from 'react-pace-progress'
 import * as XMLUrl from "../components/UI/XMLUrl";
 
-class GetProductList extends Component {
+class GetSearchResults extends Component {
+
     state = {
         productList: [],
-        categoryId: this.props.match.params.id,
+        searchKey: this.props.match.params.name,
         categoryName: null,
         isLoading: true
     };
 
 
-    getProductsFromAPI = (propsCatId) => {
+    getProductsFromAPI = (searchKey) => {
         let request = new Request(XMLUrl.productXML);
 
         fetch(request).then((results) => {
@@ -29,7 +30,7 @@ class GetProductList extends Component {
 
                     for (let i = 0; i < x.length; i++) {
                         // eslint-disable-next-line to
-                        if (x[i].childNodes[32].textContent === propsCatId) {
+                        if (x[i].childNodes[6].textContent === searchKey) {
                             let ModelNameValue = x[i].childNodes[6].textContent; // Model Name
                             let ProductIdValue = x[i].childNodes[1].textContent; // Model Name
                             let ProductImageValue = x[i].childNodes[30].textContent; // Model Name
@@ -66,7 +67,7 @@ class GetProductList extends Component {
 
 
     componentDidMount() {
-        this.getProductsFromAPI(this.props.match.params.id);
+        this.getProductsFromAPI(this.props.match.params.name);
         window.scrollTo(0, 0);
     }
 
@@ -75,11 +76,11 @@ class GetProductList extends Component {
         this.setState({
             isLoading: true
         });
-        this.getProductsFromAPI(nextProps.match.params.id);
+        this.getProductsFromAPI(nextProps.match.params.name);
     }
 
-    render() {
 
+    render() {
         const products = Object.values(this.state.productList).map((data) =>
             <Products
                 key={data.ProductId} ModelName={data.ModelName} ProductId={data.ProductId}
@@ -112,9 +113,7 @@ class GetProductList extends Component {
             );
 
         }
-
-
     }
 }
 
-export default GetProductList;
+export default GetSearchResults;

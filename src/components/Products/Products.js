@@ -5,20 +5,41 @@ import {NavLink} from "react-router-dom";
 
 const productsPartial = (props) => (
 
-    <div className="col-sm-6 col-xs-6 col-md-3 col-lg-3">
+    <div className="col-sm-6 col-md-3 ">
+        <div className="products">
+            <div className="product">
+                <div className="product-image">
+                    <div className="image">
+                        <NavLink to={"/product/" + props.ProductId}  role="button">
 
-        <div className="thumbnail">
-            <Image source={props.ProductImage} width={240} height={240} />
-                <div className="caption">
-                    <h3> {props.ModelName}</h3>
-                    <p>Fiyat: {props.ProductListPrice} ₺<br />
-                        </p>
-                    <p><NavLink to={"/product/"+props.ProductId} className="btn btn-default btn-block" role="button">Ürünü İncele</NavLink></p>
+                            <Image source={props.ProductImage} width={240} height={240}/>
+
+                        </NavLink>
+                    </div>
+
+
                 </div>
+
+
+                <div className="product-info text-left">
+                    <h3 className="name">
+                        <NavLink to={"/product/" + props.ProductId}  role="button">
+                            {props.ModelName}
+                        </NavLink>
+                    </h3>
+
+                    <div className="product-price"><span className="price"> {props.ProductListPrice} ₺ </span></div>
+
+
+                </div>
+
+
+            </div>
+
         </div>
+
+
     </div>
-
-
 );
 
 export default productsPartial;

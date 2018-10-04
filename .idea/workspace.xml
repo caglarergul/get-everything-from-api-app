@@ -16,7 +16,7 @@
     <session id="391701152">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.opened" value="2" />
@@ -91,8 +91,18 @@
       <file leaf-file-name="GetProductList.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/GetProductList.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="125">
               <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="152">
+              <caret line="8" column="74" lean-forward="true" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
+=======
+            <state relative-caret-position="40">
+              <caret line="15" column="93" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="93" />
+>>>>>>> origin/master
+>>>>>>> 5cc68d35666e185ebd497f2624aff1e96d182b17
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -273,13 +283,25 @@
       <option name="presentableId" value="Default" />
       <updated>1537525152853</updated>
       <workItem from="1537525154182" duration="7685000" />
+<<<<<<< HEAD
       <workItem from="1537776467083" duration="39395000" />
       <workItem from="1538319259825" duration="424000" />
+=======
+      <workItem from="1537776467083" duration="39480000" />
+>>>>>>> 5cc68d35666e185ebd497f2624aff1e96d182b17
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="51951000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="47165000" />
+=======
+    <option name="totallyTimeSpent" value="51527000" />
+>>>>>>> origin/master
+>>>>>>> 5cc68d35666e185ebd497f2624aff1e96d182b17
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -642,8 +664,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Products/Products.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="17">
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="152">
+          <caret line="8" column="74" lean-forward="true" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
+=======
+        <state relative-caret-position="51">
+>>>>>>> 5cc68d35666e185ebd497f2624aff1e96d182b17
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+>>>>>>> origin/master
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
