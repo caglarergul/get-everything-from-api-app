@@ -1281,7 +1281,8 @@ header{background: #fff;}
   -moz-border-radius: 5px 0 0 5px;
   border-radius: 5px 0 0 5px;
   padding: 13px;
-  width: 67%;
+  width: 91%;
+  margin-left: 20px;
 }
 .main-header .top-search-holder .search-area .categories-filter {
   border-right: 1px solid #e5e5e5;
@@ -6969,3 +6970,16 @@ z-index:10000
 .bestsellers1 .product-bestseller .products-grid .item .item-inner { min-height: 125px;}
 }
 
+
+.VariantTable {
+  width:100%;
+}
+.VariantTable thead th {background-color: #333333; color: #ffffff}
+.VariantTable td, th {
+  padding: 8px;
+
+  border: 1px solid #efefef;
+}
+.VariantTable tbody {
+  border: 1px solid #efefef
+}

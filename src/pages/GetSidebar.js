@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Sidebar from "../components/Sidebar/Sidebar";
 import Aux from "../components/UI/Auxilary";
+import * as XMLUrl from "../components/UI/XMLUrl";
+
 class GetSidebar extends Component {
     state = {
         categoryList: []
@@ -27,7 +29,7 @@ class GetSidebar extends Component {
     };
 
     getCategoriesFromAPI = () => {
-        let request = new Request('https://www.promiks.com.tr/WS/WSANXMLPublish.aspx?xmlpid=6');
+        let request = new Request(XMLUrl.categoryXML);
 
         fetch(request).then((results) => {
             // results returns XML. lets cast this to a string, then create
@@ -42,29 +44,23 @@ class GetSidebar extends Component {
 
                     for (let i = 0; i < x.length; i++) {
 
-                        let ProductCategoryName = x[i].childNodes[34].textContent; // Category Name
-                        let CategoryId = x[i].childNodes[32].textContent; // Category Id
-
-
+                        let ProductCategoryName = x[i].childNodes[3].textContent; // Category Name
+                        let CategoryId = x[i].childNodes[0].textContent; // Category Id
                             newCategoryList.push({
                                 CategoryId: CategoryId,
                                 CategoryName: ProductCategoryName
-
                             });
-
-
-
                     }
 
 
-                    let updatedCategoryList = this.removeDuplicateCategories(newCategoryList,"CategoryId");
+                    // let updatedCategoryList = this.removeDuplicateCategories(newCategoryList,"CategoryId");
 
-
-                    delete updatedCategoryList[38];
-                    let sortedList = updatedCategoryList.sort(this.GetSortOrder("CategoryName"));
-                    // console.log(sortedList);
+                    //
+                    // delete updatedCategoryList[38];
+                    // let sortedList = updatedCategoryList.sort(this.GetSortOrder("CategoryName"));
+                    // // console.log(sortedList);
                     this.setState({
-                        categoryList: sortedList
+                        categoryList: newCategoryList
                     });
                 });
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ProductDetails from "../components/Products/ProductDetails";
+import * as XMLUrl from "../components/UI/XMLUrl";
 
 class GetProductDetails extends Component {
 
@@ -10,7 +11,7 @@ class GetProductDetails extends Component {
 
 
     getTheProductFromAPI = (productId) => {
-        let request = new Request('https://www.promiks.com.tr/WS/WSANXMLPublish.aspx?xmlpid=6');
+        let request = new Request(XMLUrl.productXML);
 
         fetch(request).then((results) => {
             // results returns XML. lets cast this to a string, then create
@@ -33,6 +34,17 @@ class GetProductDetails extends Component {
                             let ProductKDVPrice = x[i].childNodes[17].textContent; // KDVPrice
                             let UnitInStock = x[i].childNodes[13].textContent; // Stock
                             let ProductCategoryName =  x[i].childNodes[34].textContent; // Category Name
+                            let Description =  x[i].childNodes[9].textContent; // Description
+                            let VariantSubs = [];
+                            for (let j = 0; j<x[i].childNodes[39].childNodes.length; j++) {
+                                VariantSubs.push({
+                                    color : x[i].childNodes[39].childNodes[j].childNodes[1].textContent,
+                                    price: x[i].childNodes[39].childNodes[j].childNodes[7].textContent,
+                                    stock:x[i].childNodes[39].childNodes[j].childNodes[8].textContent
+                                })
+                            }
+
+
                             newProductDetails.push({
                                 ModelName : ModelNameValue,
                                 ProductId : ProductIdValue,
@@ -40,7 +52,9 @@ class GetProductDetails extends Component {
                                 ProductPrice : ProductPrice,
                                 ProductKDVPrice : ProductKDVPrice,
                                 UnitInStock : UnitInStock,
-                                ProductCategoryName: ProductCategoryName
+                                ProductCategoryName: ProductCategoryName,
+                                Description: Description,
+                                Variant: VariantSubs
 
                             });
                             this.setState({categoryName: ProductCategoryName});
@@ -70,7 +84,7 @@ class GetProductDetails extends Component {
             <ProductDetails
                 key={data.ProductId} ModelName={data.ModelName} ProductId={data.ProductId}
                 ProductImage={data.ProductImage} ProductKDVPrice={data.ProductKDVPrice} ProductPrice={data.ProductPrice}
-                UnitInStock={data.UnitInStock} ProductCategoryName={data.ProductCategoryName}/>
+                UnitInStock={data.UnitInStock} ProductCategoryName={data.ProductCategoryName} Description={data.Description} Variant={data.Variant}/>
         );
         return (
             <div>

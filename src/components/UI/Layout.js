@@ -6,6 +6,7 @@ import GetProductList from "../../pages/GetProductList";
 import Home from "../../pages/Home";
 import Header from "../../pages/Header";
 import GetProductDetails from "../../pages/GetProductDetails";
+import GetSearchResults from "../../pages/GetSearchResults";
 
 class Layout extends Component {
     render() {
@@ -24,6 +25,7 @@ class Layout extends Component {
                                 <div className="col-xs-12 col-sm-12 col-md-10">
                                     <Route path="/category/:id" exact component={GetProductList}/>
                                     <Route path="/product/:id" exact component={GetProductDetails}/>
+                                    <Route path="/search/:name" exact component={GetSearchResults}/>
                                     <Route path="/" exact component={Home}/>
                                 </div>
                             </div>

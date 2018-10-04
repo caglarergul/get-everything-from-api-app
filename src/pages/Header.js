@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Aux from "../components/UI/Auxilary";
 import Logo from "../images/logo.png";
+import SearchForm from "../components/Products/SearchForm";
 class Header extends Component {
     render() {
         return (
@@ -22,24 +23,7 @@ class Header extends Component {
                                 <div className="col-xs-12 col-sm-12 col-md-7 top-search-holder">
                                     {/*-- /.contact-row --*/}
                                     {/*-- ============================================================= SEARCH AREA ============================================================= --*/}
-                                    <div className="search-area">
-                                        <form>
-                                            <div className="control-group">
-                                                <ul className="categories-filter animate-dropdown">
-                                                    <li className="dropdown"> <a className="dropdown-toggle"  data-toggle="dropdown" href="category.html">Categories <b className="caret"></b></a>
-                                                        <ul className="dropdown-menu" role="menu" >
-                                                            <li className="menu-header">Computer</li>
-                                                            <li role="presentation"><a role="menuitem"  href="category.html">- Clothing</a></li>
-                                                            <li role="presentation"><a role="menuitem"  href="category.html">- Electronics</a></li>
-                                                            <li role="presentation"><a role="menuitem"  href="category.html">- Shoes</a></li>
-                                                            <li role="presentation"><a role="menuitem"  href="category.html">- Watches</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                                <input className="search-field" placeholder="Search here..." />
-                                                <a className="search-button" href="/" >&nbsp;</a> </div>
-                                        </form>
-                                    </div>
+                                   <SearchForm/>
                                     {/*-- /.search-area --*/}
                                     {/*-- ============================================================= SEARCH AREA : END ============================================================= --*/} </div>
                                 {/*-- /.top-search-holder --*/}
