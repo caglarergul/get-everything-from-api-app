@@ -31,7 +31,11 @@ class GetSidebar extends Component {
     getCategoriesFromAPI = () => {
         let request = new Request(XMLUrl.categoryXML);
 
-        fetch(request).then((results) => {
+        fetch(request,{
+            method: 'GET',
+
+                mode:'no-cors'
+            }).then((results) => {
             // results returns XML. lets cast this to a string, then create
             // a new DOM object out of it!
             results
@@ -70,6 +74,8 @@ class GetSidebar extends Component {
 
     componentDidMount() {
         this.getCategoriesFromAPI();
+
+
     }
     render() {
 

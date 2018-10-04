@@ -14,9 +14,12 @@ class GetProductList extends Component {
 
 
     getProductsFromAPI = (propsCatId) => {
-        let request = new Request(XMLUrl.productXML);
+        let request = new Request("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q="+XMLUrl.productXML);
 
-        fetch(request).then((results) => {
+        fetch(request,{
+            method: 'GET',
+            mode:'no-cors'
+        }).then((results) => {
             // results returns XML. lets cast this to a string, then create
             // a new DOM object out of it!
             results

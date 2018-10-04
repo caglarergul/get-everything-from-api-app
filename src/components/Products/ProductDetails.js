@@ -1,9 +1,8 @@
 import Image from "react-lazy-image";
 import React from "react";
 
-import Aux from "../UI/Auxilary";
 
-var style = {
+let style = {
     color: "#ffffff"
 };
 const productsPartial = (props) => (
