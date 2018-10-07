@@ -31,11 +31,7 @@ class GetSidebar extends Component {
     getCategoriesFromAPI = () => {
         let request = new Request(XMLUrl.categoryXML);
 
-        fetch(request,{
-            method: 'GET',
-
-                mode:'no-cors'
-            }).then((results) => {
+        fetch(request).then((results) => {
             // results returns XML. lets cast this to a string, then create
             // a new DOM object out of it!
             results

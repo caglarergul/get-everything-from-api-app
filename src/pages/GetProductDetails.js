@@ -35,6 +35,8 @@ class GetProductDetails extends Component {
                             let UnitInStock = x[i].childNodes[13].textContent; // Stock
                             let ProductCategoryName =  x[i].childNodes[34].textContent; // Category Name
                             let Description =  x[i].childNodes[9].textContent; // Description
+                            let ParentCategoryName = x[i].childNodes[37].textContent; // ParentCategoryName
+
                             let VariantSubs = [];
                             for (let j = 0; j<x[i].childNodes[39].childNodes.length; j++) {
                                 VariantSubs.push({
@@ -54,7 +56,8 @@ class GetProductDetails extends Component {
                                 UnitInStock : UnitInStock,
                                 ProductCategoryName: ProductCategoryName,
                                 Description: Description,
-                                Variant: VariantSubs
+                                Variant: VariantSubs,
+                                ParentCategoryName: ParentCategoryName
 
                             });
                             this.setState({categoryName: ProductCategoryName});
@@ -84,7 +87,7 @@ class GetProductDetails extends Component {
             <ProductDetails
                 key={data.ProductId} ModelName={data.ModelName} ProductId={data.ProductId}
                 ProductImage={data.ProductImage} ProductKDVPrice={data.ProductKDVPrice} ProductPrice={data.ProductPrice}
-                UnitInStock={data.UnitInStock} ProductCategoryName={data.ProductCategoryName} Description={data.Description} Variant={data.Variant}/>
+                UnitInStock={data.UnitInStock} ProductCategoryName={data.ProductCategoryName} Description={data.Description} Variant={data.Variant} ParentCategoryName={data.ParentCategoryName}/>
         );
         return (
             <div>

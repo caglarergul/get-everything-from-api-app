@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 
 const productsPartial = (props) => (
 
-    <div className="col-sm-6 col-md-3 ">
+    <div className="col-sm-6 col-xs-6 col-md-3 col-lg-3 ">
         <div className="products">
             <div className="product">
                 <div className="product-image">
@@ -28,7 +28,7 @@ const productsPartial = (props) => (
                         </NavLink>
                     </h3>
 
-                    <div className="product-price"><span className="price"> {props.ProductListPrice} ₺ </span></div>
+                    <div className="product-price hidden"><span className="price"> {props.ProductListPrice == 0.00 ? "fiyat isteyiniz" : props.ProductListPrice} ₺ </span></div>
 
 
                 </div>

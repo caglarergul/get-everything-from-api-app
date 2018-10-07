@@ -122,7 +122,12 @@ const productsPartial = (props) => (
                             </div>
                             <div className="col-sm-9">
                                 <div className="stock-box">
-                                    <span className="value badge" style={style}>{props.UnitInStock} Adet</span>
+                                    {props.ParentCategoryName === "Duvar Saatleri" ?
+                                        <span className="value badge" style={style}>Üretimdir Stok Var!</span>
+                                        :
+                                        <span className="value badge" style={style}>{props.UnitInStock} Adet</span>
+                                    }
+
                                 </div>
                             </div>
                         </div>
@@ -142,10 +147,11 @@ const productsPartial = (props) => (
                         <div className="row">
 
 
-                            <div className="col-sm-6">
+                            <div className="col-lg-12 col-md-12 col-sm-12">
                                 <div className="price-box">
+                                    {props.ProductListPrice>0 ?
                                     <span className="price">Kdv Dahil: {props.ProductKDVPrice} ₺</span>
-
+                                    : <span className="price">Fiyat Sorunuz</span>}
                                 </div>
                             </div>
 
@@ -156,7 +162,7 @@ const productsPartial = (props) => (
                     {/* /.price-container */}
                     </div>
                     <div className="col-md-5">
-                        {props.Variant.length>0 ?
+                        {(props.Variant.length>0) && (props.ParentCategoryName !== "Duvar Saatleri") ?
                         <table className="VariantTable">
                             <thead>
                             <tr>

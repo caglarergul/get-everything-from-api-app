@@ -7,6 +7,7 @@ import Home from "../../pages/Home";
 import Header from "../../pages/Header";
 import GetProductDetails from "../../pages/GetProductDetails";
 import GetSearchResults from "../../pages/GetSearchResults";
+import Iletisim from "../../pages/Iletisim";
 
 class Layout extends Component {
     render() {
@@ -26,6 +27,7 @@ class Layout extends Component {
                                     <Route path="/category/:id" exact component={GetProductList}/>
                                     <Route path="/product/:id" exact component={GetProductDetails}/>
                                     <Route path="/search/:name" exact component={GetSearchResults}/>
+                                    <Route path="/iletisim" exact component={Iletisim}/>
                                     <Route path="/" exact component={Home}/>
                                 </div>
                             </div>

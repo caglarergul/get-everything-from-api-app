@@ -14,12 +14,10 @@ class GetProductList extends Component {
 
 
     getProductsFromAPI = (propsCatId) => {
-        let request = new Request("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q="+XMLUrl.productXML);
 
-        fetch(request,{
-            method: 'GET',
-            mode:'no-cors'
-        }).then((results) => {
+        let request = new Request(XMLUrl.productXML);
+
+        fetch(request).then((results) => {
             // results returns XML. lets cast this to a string, then create
             // a new DOM object out of it!
             results
@@ -45,7 +43,8 @@ class GetProductList extends Component {
                                 ProductImage: ProductImageValue,
                                 ProductListPrice: ProductListPrice,
                                 UnitInStock: UnitInStock,
-                                ProductCategoryName: ProductCategoryName
+                                ProductCategoryName: ProductCategoryName,
+
 
                             });
                             this.setState({categoryName: ProductCategoryName});
@@ -87,12 +86,12 @@ class GetProductList extends Component {
             <Products
                 key={data.ProductId} ModelName={data.ModelName} ProductId={data.ProductId}
                 ProductImage={data.ProductImage} ProductListPrice={data.ProductListPrice}
-                UnitInStock={data.UnitInStock} ProductCategoryName={data.ProductCategoryName}/>
+                UnitInStock={data.UnitInStock} ProductCategoryName={data.ProductCategoryName} />
         );
 
         const { isLoading } = this.state;
         if (isLoading) {
-            return <Pace color="#27ae60"/>
+            return <Pace color="#C33F25"/>
         } else {
 
             return (

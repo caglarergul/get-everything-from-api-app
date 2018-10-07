@@ -59,10 +59,10 @@ class Header extends Component {
                                         <div className="nav-outer">
                                             <ul className="nav navbar-nav">
                                                 <li className=""> <a href="/"  >ANASAYFA</a> </li>
-                                                <li className=""> <a href="/"  >2019 FİYAT LİSTESİ</a> </li>
-                                                <li className=""> <a href="/"  >HAKKIMIZDA</a> </li>
-                                                <li className=""> <a href="/"  >2019 DİJİTAL KATALOG</a> </li>
-                                                <li className=""> <a href="/"  >İLETİŞİM</a> </li>
+                                                <li className=""> <a href="http://www.binbirpromosyon.com.tr/fiyatlistesi-2019.pdf" target="_blank" >2019 FİYAT LİSTESİ</a> </li>
+                                                <li className=""> <a href="/hakkimizda"  >HAKKIMIZDA</a> </li>
+                                                <li className=""> <a href="https://www.dropbox.com/s/8k7ys5n81dpw2v0/2019-digitalKatalog.pdf?dl=0"  target="_blank"  >2019 DİJİTAL KATALOG</a> </li>
+                                                <li className=""> <a href="/iletisim"  >İLETİŞİM</a> </li>
 
                                             </ul>
                                             {/*-- /.navbar-nav --*/}
