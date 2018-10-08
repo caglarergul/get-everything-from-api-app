@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Aux from "../components/UI/Auxilary";
 import DuvarSaatleriSlider from "../images/sliders/duvar-saatleri-slider.jpg";
-import HediyelikEsyalarSlider from "../images/sliders/hediyelik-esyalar-slider.jpg";
-import VipSetlerSlider from "../images/sliders/vip-setler.jpg";
+import GeriDonusumSlider from "../images/sliders/geri-donusumlu-urunler.jpg";
+import VipSetlerSlider from "../images/sliders/hediyelik-esyalar-slider.jpg";
 import AjandalarSlider from "../images/sliders/ajandalar-slider.jpg";
 import {NavLink} from 'react-router-dom';
 
@@ -54,7 +54,7 @@ class Home extends Component {
 
                         </div>
                         <div className="item">
-                            <img alt="kategoriler" src={HediyelikEsyalarSlider} alt="..." />
+                            <img alt="kategoriler" src={GeriDonusumSlider} alt="..." />
 
                         </div>
 

@@ -9,6 +9,10 @@ class searchForm extends Component {
         productId: null
     };
 
+    Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
     constructor(props) {
         super(props);
         this.updateNameInUrl = this.updateNameInUrl.bind(this);
@@ -16,9 +20,12 @@ class searchForm extends Component {
 
     updateNameInUrl(event) {
 
-        let newName = event.target.value;
+        let newName = event.target.value.toUpperCase();
         this.setState({urlName: newName});
-        this.getProductsFromAPI(newName)
+
+        this.getProductsFromAPI(newName);
+
+
     }
 
     getProductsFromAPI = (searchKey) => {
@@ -41,6 +48,7 @@ class searchForm extends Component {
                             let ProductIdValue = x[i].childNodes[1].textContent; // Model Name
                             this.setState({productId: ProductIdValue});
                         }
+
 
                     }
                     console.log(newProductList);
