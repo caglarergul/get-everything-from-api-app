@@ -7007,3 +7007,12 @@ div.categories > a:hover {
   margin-top: 20px;
   border-top: 1px solid #dddddd;
 }
+
+
+.image-gallery-thumbnail.active {
+  border: 2px solid #C33F25 !important;
+}
+
+.image-gallery-thumbnail {
+  width: 70px;
+}

@@ -2,12 +2,14 @@ import React, {Component} from 'react';
 import ProductDetails from "../components/Products/ProductDetails";
 import * as XMLUrl from "../components/UI/XMLUrl";
 
+
 class GetProductDetails extends Component {
 
     state = {
         productId : this.props.match.params.id,
         productDetails: []
     };
+
 
 
     getTheProductFromAPI = (productId) => {
@@ -36,6 +38,15 @@ class GetProductDetails extends Component {
                             let ProductCategoryName =  x[i].childNodes[34].textContent; // Category Name
                             let Description =  x[i].childNodes[9].textContent; // Description
                             let ParentCategoryName = x[i].childNodes[37].textContent; // ParentCategoryName
+                            let VariantImagesSubs = [];
+
+                            for (let k = 0; k<x[i].childNodes[31].childNodes.length; k++) {
+                                VariantImagesSubs.push({
+                                    original : x[i].childNodes[31].childNodes[k].childNodes[0].textContent,
+                                    thumbnail : x[i].childNodes[31].childNodes[k].childNodes[0].textContent
+                                })
+                            }
+console.log(VariantImagesSubs);
 
                             let VariantSubs = [];
                             for (let j = 0; j<x[i].childNodes[39].childNodes.length; j++) {
@@ -57,7 +68,8 @@ class GetProductDetails extends Component {
                                 ProductCategoryName: ProductCategoryName,
                                 Description: Description,
                                 Variant: VariantSubs,
-                                ParentCategoryName: ParentCategoryName
+                                ParentCategoryName: ParentCategoryName,
+                                VariantImagesURL: VariantImagesSubs
 
                             });
                             this.setState({categoryName: ProductCategoryName});
@@ -65,7 +77,6 @@ class GetProductDetails extends Component {
 
                     }
 
-                    console.log(newProductDetails);
 
 
                     this.setState({
@@ -79,6 +90,8 @@ class GetProductDetails extends Component {
     componentDidMount() {
         this.getTheProductFromAPI(this.state.productId);
         window.scrollTo(0, 0);
+
+
     }
 
     componentWillReceiveProps(nextProps) {
@@ -91,11 +104,14 @@ class GetProductDetails extends Component {
 
 
     render() {
+
         const productDetails = Object.values(this.state.productDetails).map((data) =>
             <ProductDetails
                 key={data.ProductId} ModelName={data.ModelName} ProductId={data.ProductId}
                 ProductImage={data.ProductImage} ProductKDVPrice={data.ProductKDVPrice} ProductPrice={data.ProductPrice}
-                UnitInStock={data.UnitInStock} ProductCategoryName={data.ProductCategoryName} Description={data.Description} Variant={data.Variant} ParentCategoryName={data.ParentCategoryName}/>
+                UnitInStock={data.UnitInStock} ProductCategoryName={data.ProductCategoryName}
+                Description={data.Description} Variant={data.Variant} ParentCategoryName={data.ParentCategoryName}
+                VariantImagesURL={data.VariantImagesURL}/>
         );
         return (
             <div>

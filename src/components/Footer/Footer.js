@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Aux from "../UI/Auxilary";
-import Ajandalar from "../../images/kategoriler/ajandalar-01.png";
 import {NavLink} from "react-router-dom";
 class Footer extends Component {
     render() {
