@@ -81,6 +81,14 @@ class GetProductDetails extends Component {
         window.scrollTo(0, 0);
     }
 
+    componentWillReceiveProps(nextProps) {
+        window.scrollTo(0, 0);
+        this.setState({
+            isLoading: true
+        });
+        this.getTheProductFromAPI(nextProps.match.params.id);
+    }
+
 
     render() {
         const productDetails = Object.values(this.state.productDetails).map((data) =>

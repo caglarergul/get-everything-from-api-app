@@ -43,37 +43,29 @@ class Home extends Component {
                 <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
 
                     <ol className="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="0" className="active">&nbsp;</li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1">&nbsp;</li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2">&nbsp;</li>
                     </ol>
 
                     <div className="carousel-inner" role="listbox">
                         <div className="item active">
-                            <img src={AjandalarSlider} alt="..." />
-                                <div className="carousel-caption">
-                                    ...
-                                </div>
+                            <img alt="kategoriler" src={AjandalarSlider} alt="..." />
+
                         </div>
                         <div className="item">
-                            <img src={HediyelikEsyalarSlider} alt="..." />
-                                <div className="carousel-caption">
-                                    ...
-                                </div>
+                            <img alt="kategoriler" src={HediyelikEsyalarSlider} alt="..." />
+
                         </div>
 
                         <div className="item">
-                            <img src={VipSetlerSlider} alt="..." />
-                            <div className="carousel-caption">
-                                ...
-                            </div>
+                            <img alt="kategoriler" src={VipSetlerSlider} alt="..." />
+
                         </div>
 
                         <div className="item">
-                            <img src={DuvarSaatleriSlider} alt="..." />
-                            <div className="carousel-caption">
-                                ...
-                            </div>
+                            <img alt="kategoriler" src={DuvarSaatleriSlider} alt="..." />
+
                         </div>
 
                     </div>
@@ -92,151 +84,151 @@ class Home extends Component {
                 </div>
 <br />
                 <div className="row">
-                    <div className="col-lg-8 col-lg-offset-2">
+                    <div className="col-lg-10 col-lg-offset-1">
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}   >
-                          <img width="100%" src={Ajandalar} />
+                        <NavLink to={"/category/145"}   >
+                          <img alt="kategoriler" width="100%" src={Ajandalar} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}   >
-                            <img width="100%" src={Anahtarliklar} />
+                        <NavLink to={"/category/175"}   >
+                            <img alt="kategoriler" width="100%" src={Anahtarliklar} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}   >
-                            <img width="100%" src={Bardaklar} />
+                        <NavLink to={"/category/144"}   >
+                            <img alt="kategoriler" width="100%" src={Bardaklar} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={BezCantalar} />
+                        <NavLink to={"/category/189"}  exact >
+                            <img alt="kategoriler" width="100%" src={BezCantalar} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={Defterler} />
+                        <NavLink to={"/category/181"}  exact >
+                            <img alt="kategoriler" width="100%" src={Defterler} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={DijitalUrunler} />
+                        <NavLink to={"/category/129"}  exact >
+                            <img alt="kategoriler" width="100%" src={DijitalUrunler} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={DuvarSaatleri} />
+                        <NavLink to={"/category/196"}  exact >
+                            <img alt="kategoriler" width="100%" src={DuvarSaatleri} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={GeriDonusum} />
-                        </NavLink>
-                    </div>
-
-                    <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={HediyelikEsya} />
+                        <NavLink to={"/category/179"}  exact >
+                            <img alt="kategoriler" width="100%" src={GeriDonusum} />
                         </NavLink>
                     </div>
 
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={HediyelikGida} />
+                        <NavLink to={"/category/193"}  exact >
+                            <img alt="kategoriler" width="100%" src={HediyelikEsya} />
                         </NavLink>
                     </div>
 
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={Kalemler} />
-                        </NavLink>
-                    </div>
-                    <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={KalemSetleri} />
+                        <NavLink to={"/category/192"}  exact >
+                            <img alt="kategoriler" width="100%" src={HediyelikGida} />
                         </NavLink>
                     </div>
 
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={KalemlikCakmakBalon} />
+                        <NavLink to={"/category/187"}  exact >
+                            <img alt="kategoriler" width="100%" src={Kalemler} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={KursunKalem} />
-                        </NavLink>
-                    </div>
-
-                    <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={MasaSetleri} />
-                        </NavLink>
-                    </div>
-                    <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={Kartvizitlik} />
+                        <NavLink to={"/category/131"}  exact >
+                            <img alt="kategoriler" width="100%" src={KalemSetleri} />
                         </NavLink>
                     </div>
 
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={MasaSaatleri} />
+                        <NavLink to={"/category/126"}  exact >
+                            <img alt="kategoriler" width="100%" src={KalemlikCakmakBalon} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={PiereCardin} />
+                        <NavLink to={"/category/194"}  exact >
+                            <img alt="kategoriler" width="100%" src={KursunKalem} />
+                        </NavLink>
+                    </div>
+
+                    <div className="col-lg-6 categories">
+                        <NavLink to={"/category/94"}  exact >
+                            <img alt="kategoriler" width="100%" src={MasaSetleri} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={Cantalar} />
+                        <NavLink to={"/category/146"}  exact >
+                            <img alt="kategoriler" width="100%" src={Kartvizitlik} />
+                        </NavLink>
+                    </div>
+
+                    <div className="col-lg-6 categories">
+                        <NavLink to={"/category/195"}  exact >
+                            <img alt="kategoriler" width="100%" src={MasaSaatleri} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={OtoKokusu} />
+                        <NavLink to={"/category/200"}  exact >
+                            <img alt="kategoriler" width="100%" src={PiereCardin} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={PlaketKristal} />
+                        <NavLink to={"/category/127"}  exact >
+                            <img alt="kategoriler" width="100%" src={Cantalar} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={TabloSaatler} />
+                        <NavLink to={"/category/124"}  exact >
+                            <img alt="kategoriler" width="100%" src={OtoKokusu} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={MousePad} />
+                        <NavLink to={"/category/137"}  exact >
+                            <img alt="kategoriler" width="100%" src={PlaketKristal} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={Postit} />
+                        <NavLink to={"/category/182"}  exact >
+                            <img alt="kategoriler" width="100%" src={TabloSaatler} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={Organizerler} />
+                        <NavLink to={"/category/132"}  exact >
+                            <img alt="kategoriler" width="100%" src={MousePad} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={Tekstil} />
+                        <NavLink to={"/category/138"}  exact >
+                            <img alt="kategoriler" width="100%" src={Postit} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                        <NavLink to={"/category/"}  exact >
-                            <img width="100%" src={Sapkalar} />
+                        <NavLink to={"/category/174"}  exact >
+                            <img alt="kategoriler" width="100%" src={Organizerler} />
                         </NavLink>
                     </div>
                     <div className="col-lg-6 categories">
-                    <NavLink to={"/category/"}  exact >
-                        <img width="100%" src={VipSetler} />
+                        <NavLink to={"/category/143"}  exact >
+                            <img alt="kategoriler" width="100%" src={Tekstil} />
+                        </NavLink>
+                    </div>
+                    <div className="col-lg-6 categories">
+                        <NavLink to={"/category/150"}  exact >
+                            <img alt="kategoriler" width="100%" src={Sapkalar} />
+                        </NavLink>
+                    </div>
+                    <div className="col-lg-6 categories">
+                    <NavLink to={"/category/186"}  exact >
+                        <img alt="kategoriler" width="100%" src={VipSetler} />
                     </NavLink>
                 </div>
                     </div>

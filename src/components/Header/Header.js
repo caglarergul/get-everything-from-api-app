@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import Aux from "../components/UI/Auxilary";
-import Logo from "../images/logo.png";
-import SearchForm from "../components/Products/SearchForm";
+import Aux from "../UI/Auxilary";
+import Logo from "../../images/logo.png";
+import SearchForm from "../Products/SearchForm";
+import {NavLink} from 'react-router-dom';
 class Header extends Component {
     render() {
         return (
@@ -59,10 +60,10 @@ class Header extends Component {
                                         <div className="nav-outer">
                                             <ul className="nav navbar-nav">
                                                 <li className=""> <a href="/"  >ANASAYFA</a> </li>
-                                                <li className=""> <a href="http://www.binbirpromosyon.com.tr/fiyatlistesi-2019.pdf" target="_blank" >2019 FİYAT LİSTESİ</a> </li>
-                                                <li className=""> <a href="/hakkimizda"  >HAKKIMIZDA</a> </li>
-                                                <li className=""> <a href="https://www.dropbox.com/s/8k7ys5n81dpw2v0/2019-digitalKatalog.pdf?dl=0"  target="_blank"  >2019 DİJİTAL KATALOG</a> </li>
-                                                <li className=""> <a href="/iletisim"  >İLETİŞİM</a> </li>
+                                                <li className=""> <a href="http://www.binbirpromosyon.com.tr/fiyatlistesi-2019.pdf" target="_blank" rel="noopener noreferrer">2019 FİYAT LİSTESİ</a> </li>
+                                                <li className=""> <NavLink to={"/banka-hesap-bilgileri"}  exact >BANKA HESAP BİLGİLERİ</NavLink> </li>
+                                                <li className=""> <a href="https://www.dropbox.com/s/8k7ys5n81dpw2v0/2019-digitalKatalog.pdf?dl=0"  target="_blank" rel="noopener noreferrer" >2019 DİJİTAL KATALOG</a> </li>
+                                                <li className=""> <NavLink to={"/iletisim"}  exact >İLETİŞİM</NavLink> </li>
 
                                             </ul>
                                             {/*-- /.navbar-nav --*/}

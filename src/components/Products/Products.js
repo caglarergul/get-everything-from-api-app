@@ -28,7 +28,9 @@ const productsPartial = (props) => (
                         </NavLink>
                     </h3>
 
-                    <div className="product-price hidden"><span className="price"> {props.ProductListPrice == 0.00 ? "fiyat isteyiniz" : props.ProductListPrice} ₺ </span></div>
+                    <div className="product-price hidden">
+                        <span className="price"> {props.ProductListPrice == 0.00 ? "fiyat isteyiniz" : props.ProductListPrice} ₺ </span>
+                    </div>
 
 
                 </div>

@@ -6995,3 +6995,15 @@ div.categories > a:hover {
   display: block;
   margin-bottom: 5px;
 }
+
+.price-kdv {
+  font-size: 17px;
+  font-weight: bold;
+  color: #cc0000;
+}
+
+.footer-bottom{
+  padding-top: 30px !important;
+  margin-top: 20px;
+  border-top: 1px solid #dddddd;
+}

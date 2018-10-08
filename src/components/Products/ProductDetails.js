@@ -149,8 +149,11 @@ const productsPartial = (props) => (
 
                             <div className="col-lg-12 col-md-12 col-sm-12">
                                 <div className="price-box">
-                                    {props.ProductListPrice>0 ?
-                                    <span className="price">Kdv Dahil: {props.ProductKDVPrice} ₺</span>
+                                    {(props.ProductKDVPrice !== "0.00") ?
+                                    <div>
+                                        <span className="price">{props.ProductPrice} ₺ + KDV</span><br />
+                                        <span className="price-kdv">Kdv Dahil: {props.ProductKDVPrice} ₺</span>
+                                    </div>
                                     : <span className="price">Fiyat Sorunuz</span>}
                                 </div>
                             </div>

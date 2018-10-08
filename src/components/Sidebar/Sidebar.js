@@ -4,7 +4,7 @@ import Aux from '../UI/Auxilary';
 
 const sidebarPartial = (props) => (
     <Aux>
-        {(props.CategoryId == "178") ?
+        {(props.CategoryId === "178") ?
                 ""
             :  <li className="menu-item">
 

@@ -4,10 +4,12 @@ import GetSidebar from '../../pages/GetSidebar';
 import {Route, BrowserRouter} from "react-router-dom";
 import GetProductList from "../../pages/GetProductList";
 import Home from "../../pages/Home";
-import Header from "../../pages/Header";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import GetProductDetails from "../../pages/GetProductDetails";
 import GetSearchResults from "../../pages/GetSearchResults";
-import Iletisim from "../../pages/Iletisim";
+import Contact from "../../pages/Contact";
+import BankAccount from "../../pages/BankAccount";
 
 class Layout extends Component {
     render() {
@@ -27,14 +29,15 @@ class Layout extends Component {
                                     <Route path="/category/:id" exact component={GetProductList}/>
                                     <Route path="/product/:id" exact component={GetProductDetails}/>
                                     <Route path="/search/:name" exact component={GetSearchResults}/>
-                                    <Route path="/iletisim" exact component={Iletisim}/>
+                                    <Route path="/iletisim" exact component={Contact}/>
+                                    <Route path="/banka-hesap-bilgileri" exact component={BankAccount}/>
                                     <Route path="/" exact component={Home}/>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
+                    <Footer/>
                 </Aux>
             </BrowserRouter>
         );
