@@ -10,6 +10,7 @@
     "react-connect-form": "^0.7.1",
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.10",
+    "react-image-gallery": "^0.8.11",
     "react-infinite-scroll-component": "^4.2.0",
     "react-lazy-image": "^1.1.0",
     "react-lazy-load-image-component": "^1.1.4",
