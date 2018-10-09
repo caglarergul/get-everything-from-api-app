@@ -50,21 +50,21 @@ class Home extends Component {
 
                     <div className="carousel-inner" role="listbox">
                         <div className="item active">
-                            <img alt="kategoriler" src={AjandalarSlider} alt="..." />
+                            <img alt="kategoriler" src={AjandalarSlider}  />
 
                         </div>
                         <div className="item">
-                            <img alt="kategoriler" src={GeriDonusumSlider} alt="..." />
-
-                        </div>
-
-                        <div className="item">
-                            <img alt="kategoriler" src={VipSetlerSlider} alt="..." />
+                            <img alt="kategoriler" src={GeriDonusumSlider} />
 
                         </div>
 
                         <div className="item">
-                            <img alt="kategoriler" src={DuvarSaatleriSlider} alt="..." />
+                            <img alt="kategoriler" src={VipSetlerSlider}  />
+
+                        </div>
+
+                        <div className="item">
+                            <img alt="kategoriler" src={DuvarSaatleriSlider}  />
 
                         </div>
 

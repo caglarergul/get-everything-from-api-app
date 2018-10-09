@@ -29,7 +29,7 @@ const productsPartial = (props) => (
                     </h3>
 
                     <div className="product-price hidden">
-                        <span className="price"> {props.ProductListPrice == 0.00 ? "fiyat isteyiniz" : props.ProductListPrice} ₺ </span>
+                        <span className="price"> {props.ProductListPrice === "0.00" ? "fiyat isteyiniz" : props.ProductListPrice} ₺ </span>
                     </div>
 
 

@@ -14,21 +14,6 @@ const productsPartial = (props) => (
 
                 <ImageGallery items={props.VariantImagesURL} showPlayButton={false} showFullscreenButton={false} sizes="100%"/>
 
-                {/*<ul id="lightSlider">*/}
-                    {/*<li data-thumb={props.ProductImage}>*/}
-                        {/*<img src={props.ProductImage} className="img-responsive" width="100%"/>*/}
-
-                    {/*</li>*/}
-                    {/*{props.VariantImagesURL.map((data, igkey) => {*/}
-                            {/*return (*/}
-                                {/*<li key={igkey} data-thumb={data.VariantImageURL}>*/}
-                                    {/*<img src={data.VariantImageURL} />*/}
-                                {/*</li>*/}
-                            {/*);*/}
-                        {/*}*/}
-                    {/*)}*/}
-                {/*</ul>*/}
-                {/* /.single-product-gallery */}
             </div>
             {/* /.gallery-holder */}
             <div className='col-sm-6 col-md-7 product-info-block'>

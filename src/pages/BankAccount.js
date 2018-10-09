@@ -6,6 +6,7 @@ class BankAccount extends Component {
             <div>
                 <h1>Banka Hesap Bilgilerimiz</h1>
                 <strong>GARANTİ BANKASI Hesap Bilgileri</strong><br />
+                Ömer Taha Şafak<br />
                 ŞUBE: Toptancılar Çarşı<br />
                 ŞUBE KODU: 269<br />
                 HESAP NO: 6293882<br />
