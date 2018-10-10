@@ -67,7 +67,7 @@ const productsPartial = (props) => (
                         </div>
                         {/* /.price-container */}
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-md-5 hidden">
                         {(props.Variant.length > 0) && (props.ParentCategoryName !== "Duvar Saatleri") ?
                             <table className="VariantTable">
                                 <thead>
