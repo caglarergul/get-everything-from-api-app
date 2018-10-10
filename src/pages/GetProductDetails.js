@@ -46,17 +46,22 @@ class GetProductDetails extends Component {
                                     thumbnail : x[i].childNodes[31].childNodes[k].childNodes[0].textContent
                                 })
                             }
-console.log(VariantImagesSubs);
+
 
                             let VariantSubs = [];
                             for (let j = 0; j<x[i].childNodes[39].childNodes.length; j++) {
+
+
+
+
+
                                 VariantSubs.push({
-                                    color : x[i].childNodes[39].childNodes[j].childNodes[1].textContent,
-                                    price: x[i].childNodes[39].childNodes[j].childNodes[7].textContent,
-                                    stock:x[i].childNodes[39].childNodes[j].childNodes[8].textContent
+                                    color : x[i].childNodes[39].childNodes[j].getElementsByTagName("VariantName")[0].innerHTML,
+                                    price: x[i].childNodes[39].childNodes[j].getElementsByTagName("Price")[0].innerHTML,
+                                    stock:x[i].childNodes[39].childNodes[j].getElementsByTagName("UnitInStock")[0].innerHTML
                                 })
                             }
-
+                            //console.log(VariantSubs);
 
                             newProductDetails.push({
                                 ModelName : ModelNameValue,

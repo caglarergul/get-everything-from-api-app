@@ -92,7 +92,7 @@ class Footer extends Component {
                                             </NavLink>
                                             </li>
                                             <li>
-                                            <NavLink to={"/category/182"}   >
+                                            <NavLink to={"/category/181"}   >
                                                 Defterler
                                             </NavLink>
                                             </li>
