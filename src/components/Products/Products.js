@@ -12,7 +12,7 @@ const productsPartial = (props) => (
                     <div className="image">
                         <NavLink to={"/product/" + props.ProductId}  role="button">
 
-                            <Image source={props.ProductImage} width={240} height={240}/>
+                            <Image source={props.ProductImage.replace('orginal', 'middle')} width={240} height={240}/>
 
                         </NavLink>
                     </div>

@@ -42,8 +42,8 @@ class GetProductDetails extends Component {
 
                             for (let k = 0; k<x[i].childNodes[31].childNodes.length; k++) {
                                 VariantImagesSubs.push({
-                                    original : x[i].childNodes[31].childNodes[k].childNodes[0].textContent,
-                                    thumbnail : x[i].childNodes[31].childNodes[k].childNodes[0].textContent
+                                    original : x[i].childNodes[31].childNodes[k].childNodes[0].textContent.replace('orginal', 'big'),
+                                    thumbnail : x[i].childNodes[31].childNodes[k].childNodes[0].textContent.replace('orginal', 'small')
                                 })
                             }
 

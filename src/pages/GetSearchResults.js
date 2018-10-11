@@ -15,6 +15,8 @@ class GetSearchResults extends Component {
 
 
     getProductsFromAPI = (searchKey) => {
+
+
         let request = new Request(XMLUrl.productXML);
 
         fetch(request).then((results) => {
@@ -30,7 +32,7 @@ class GetSearchResults extends Component {
 
                     for (let i = 0; i < x.length; i++) {
                         // eslint-disable-next-line to
-                        if (x[i].childNodes[6].textContent === searchKey) {
+                        if (x[i].childNodes[6].textContent.includes(searchKey)) {
                             let ModelNameValue = x[i].childNodes[6].textContent; // Model Name
                             let ProductIdValue = x[i].childNodes[1].textContent; // Model Name
                             let ProductImageValue = x[i].childNodes[30].textContent; // Model Name
